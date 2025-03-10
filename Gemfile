@@ -1,6 +1,8 @@
 # Gemfile
 source 'https://rubygems.org'
 
+ruby '3.2.2'
+
 # Основные гемы
 gem 'telegram-bot-ruby', '~> 0.15' # Для работы с Telegram API
 gem 'activerecord', '~> 7.0'      # Для работы с базой данных
