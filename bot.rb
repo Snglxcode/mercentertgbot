@@ -17,7 +17,7 @@ Thread.new do
         num.value =  number
         num.save
         bot.api.send_message(chat_id: message.chat.id, text: "Сумма за #{Date.today.strftime('%d.%m')} сохранена!")
-      when 'итог' # Если введено слово "итог"
+      when 'итог', 'Итог'
         today = Date.today
         start_of_current_month = today.beginning_of_month
         end_of_current_month = today.end_of_month
@@ -33,8 +33,8 @@ Thread.new do
 
         # Формируем ответ
         response = <<~TEXT
-          Сумма прошлый месяц (#{end_of_previous_month.strftime('%m.%Y')}): #{sum_previous_month}, (35% - #{sum_previous_month*0.35})
-          Сумма текущий месяц (#{end_of_current_month.strftime('%m.%Y')}): #{sum_current_month}, (35% - #{sum_current_month*0.35})
+          Сумма прошлый месяц (#{end_of_previous_month.strftime('%m.%Y')}): #{sum_previous_month}, (35% - #{(sum_previous_month*0.35).to_i})
+          Сумма текущий месяц (#{end_of_current_month.strftime('%m.%Y')}): #{sum_current_month}, (35% - #{(sum_current_month*0.35).to_i})
         TEXT
 
         # Отправляем ответ
