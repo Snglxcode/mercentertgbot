@@ -6,7 +6,8 @@ ruby '3.2.2'
 # Основные гемы
 gem 'telegram-bot-ruby', '~> 0.15' # Для работы с Telegram API
 gem 'activerecord', '~> 7.0'      # Для работы с базой данных
-gem 'sqlite3', '~> 1.4'            # Драйвер для SQLite (или другой базы данных, например, pg для PostgreSQL)
+# gem 'sqlite3', '~> 1.4'            # Драйвер для SQLite (или другой базы данных, например, pg для PostgreSQL)
+gem 'pg'
 gem 'sinatra'
 gem 'rackup'
 gem 'puma'
