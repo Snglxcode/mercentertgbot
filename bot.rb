@@ -6,6 +6,8 @@ require_relative 'models/number'
 token = ENV['TG_TOKEN']
 
 db_config = YAML.load_file('config/database.yml')
+db_config['development']['username'] = ENV['DB_USER']
+db_config['development']['password'] = ENV['DB_PASSWORD']
 ActiveRecord::Base.establish_connection(db_config['development'])
 
 Thread.new do
