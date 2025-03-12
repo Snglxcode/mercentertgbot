@@ -1,12 +1,10 @@
 development:
-  # adapter: sqlite3
-  # database: db/development.sqlite3
   adapter: postgresql
   encoding: unicode
   reconnect: false
   database: b7oomy7miw7onacbheck
   pool: 5
-  username: u2dsw6xmfrb1ejhrir4n
+  username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %> 
   host: b7oomy7miw7onacbheck-postgresql.services.clever-cloud.com
   port: 50013

@@ -1,5 +1,6 @@
 require 'telegram/bot'
 require 'sinatra'
+require 'yaml'
 require_relative 'models/number'
 
 token = ENV['TG_TOKEN']
