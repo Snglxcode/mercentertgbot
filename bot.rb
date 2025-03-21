@@ -34,10 +34,13 @@ Thread.new do
         # Сумма за прошлый месяц
         sum_previous_month = Number.sum_for_period(start_of_previous_month, end_of_previous_month)
 
+        last = Number.last
+
         # Формируем ответ
         response = <<~TEXT
           Сумма прошлый месяц (#{end_of_previous_month.strftime('%m.%Y')}): #{sum_previous_month}, (35% - #{(sum_previous_month*0.35).to_i})
           Сумма текущий месяц (#{end_of_current_month.strftime('%m.%Y')}): #{sum_current_month}, (35% - #{(sum_current_month*0.35).to_i})
+          Последняя запись от #{last.saved_on.strftime('%d.%m.%Y')} на сумму #{last.value}
         TEXT
 
         # Отправляем ответ
